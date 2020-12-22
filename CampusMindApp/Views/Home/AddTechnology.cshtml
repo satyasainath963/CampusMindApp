@@ -1,0 +1,50 @@
+﻿@model CampusMindApp.Models.TechnologyModel
+<html>
+@using (Html.BeginForm())
+{
+<body>
+    <h2 style="text-align:center">ADD TECHNOLOGY</h2>
+    <table>
+        <tr>
+            <td><lable for="TechnologyNameLable">TechnologyName *</lable></td>
+            <td><input type="text" name="TechnologyName" id="TechnologyName" required /></td>
+        </tr>
+        <tr>
+            <td><label for="DescriptionLable">Description *</label></td>
+            <td><input type="text" name="Description" id="Description" required /></td>
+        </tr>
+    </table>
+    <input type="submit" value="submit" id="submit" />
+</body>
+}
+</html>
+<script type="text/javascript">src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" >
+
+        $document.ready(function () {
+            $('#submit').click(function (event) {
+                var name = $("#TechnologyName").val();
+                var descrption = $("#Description").val();
+                var obj = {
+                    TechnologyName: name,
+                    TechnologyDescription: descrption
+                }
+                SubmitForm(obj);
+                function SubmitForm(obj) {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/Home/AddLead",
+                        data: obj,
+                        dataType: "json",
+                        success: function (obj) {
+                            alert("Lead Added Successfully");
+                        },
+                        error: function (err) {
+                            console.error(err);
+                        }
+                    });
+                }
+            }
+            )
+        });
+</script>

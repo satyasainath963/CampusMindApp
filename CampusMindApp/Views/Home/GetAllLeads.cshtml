@@ -1,0 +1,19 @@
+﻿@model CampusMindApp.Models.LeadModel
+
+@{
+    ViewBag.Title = "GetAllLeads";
+}
+
+@Html.BeginForm()
+{
+<select name="LeadId">
+    @foreach (var item in ViewBag.Data)
+    {
+        <option value="@item.LeadId">
+            @item.LeadName
+        </option>
+    }
+</select>
+<input type="submit" name="submit" />
+
+}

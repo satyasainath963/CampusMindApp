@@ -1,0 +1,20 @@
+﻿@model CampusMindApp.Models.TechnologyModel
+
+@{
+    ViewBag.Title = "GetAllTechnologies";
+}
+
+<h2 style="text-align:center">TECHNOLOGIES AVAILABLE</h2>
+@Html.BeginForm()
+{
+<select name="TechnologyId">
+    @foreach (var item in ViewBag.Data)
+    {
+        <option value="@item.TechnologyId">
+            @item.TechnologyName
+        </option>
+    }
+</select>
+<input type="submit" name="submit"/>
+
+}

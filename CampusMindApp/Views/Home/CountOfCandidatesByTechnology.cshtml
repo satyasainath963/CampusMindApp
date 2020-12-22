@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "CountOfCandidatesByTechnology";
+}
+<h2 style="text-align:center">@Session["message"] </h2>
+
+<script>Resizing=(obj)=> {
+        if (obj.matches) {
+            document.body.style.backgroundColor = "green";
+        }
+        else {
+            document.body.style.backgroundColor = "red";
+        }
+    }
+    var obj = window.matchMedia("(max-width:500px)");
+    Resizing(obj);
+    obj.addListener(Resizing);</script>

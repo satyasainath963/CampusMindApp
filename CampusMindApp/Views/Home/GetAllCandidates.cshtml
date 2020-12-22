@@ -1,0 +1,25 @@
+﻿@model CampusMindApp.Models.CandidateModel
+
+@{
+    ViewBag.Title = "GetAllCandidates";
+}
+
+<h2>GetAllCandidates</h2>
+<table class="table-bordered table-striped" style="text-align:center" cellpadding="2">
+
+    <tr>
+        <th> CandidateId</th>
+        <th> CandidateName</th>
+        <th> LeadId</th>
+
+    </tr>
+    @foreach (var item in ViewBag.data)
+    {
+<tr>
+    <td>@item.CandidateId</td>
+    <td>@item.CandidateName</td>
+    <td>@item.LeadId</td>
+
+</tr>
+    }
+</table>
